@@ -1,37 +1,23 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native'
-import { createSwitchNavigator, createAppContainer } from 'react-navigation'
-import { View, Text, StyleSheet } from 'react-native'
+import {NavigationContainer} from '@react-navigation/native'
 
-import { SplashScreen, AuthStack } from '../screens'
+import {SplashScreen} from '../screens/MainScreens'
 import DrawerNavigator from './DrawerNavigator';
 
-export const [isLoading, setIsLoading] = React.useState(true)
-export const [userToken, setUserToken] = React.useState('asdf')
-
 export default function RootNavigation() {
+  const [isLoading, setIsLoading] = React.useState(true)
+
   React.useEffect(() => {
     setTimeout(() => {
       setIsLoading(false)
     }, 1000)
   }, [])
 
-  if (isLoading) {
-    return <SplashScreen />
-  } else {
-    return (
-      <NavigationContainer>
-        { userToken ? <DrawerNavigator /> : <AuthStack /> }
-      </NavigationContainer>
-    )
-  }
-}
+  if (isLoading) return <SplashScreen />
 
-const styles = StyleSheet.create({
-  container: {
-    flex:1,
-    backgroundColor:'#fff',
-    justifyContent:'center',
-    alignItems:'center'
-  }
-})
+  return (
+    <NavigationContainer>
+      <DrawerNavigator />
+    </NavigationContainer>
+  )
+}

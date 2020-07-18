@@ -1,2 +1,7 @@
-export {default as SplashScreen} from './SplashScreen'
-export {default as AuthStack} from './AuthStack'
+import * as MainScreens from './MainScreens'
+export {MainScreens}
+
+import * as SubScreens from './SubScreens'
+export {SubScreens}
+
+export {default as AuthScreens} from './AuthScreens'

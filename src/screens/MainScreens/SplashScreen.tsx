@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import {View, Text, StyleSheet} from 'react-native'
 
 export default function SplashScreen() {
   return (
@@ -10,10 +10,10 @@ export default function SplashScreen() {
 }
 
 const styles = StyleSheet.create({
-  container:{
-    flex:1,
-    backgroundColor:'#fff',
-    justifyContent:'center',
-    alignItems:'center'
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 })

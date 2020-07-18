@@ -1,7 +1,9 @@
 import React from 'react'
 import {View, Text, StyleSheet} from 'react-native'
 
-export default class ProfileScreen extends React.Component {
+import {screenTypes} from '../../types'
+
+export default class ProfileScreen extends React.Component<screenTypes.ProfileProps>{
   render() {
     return (
       <View style={styles.container}>
@@ -12,10 +14,10 @@ export default class ProfileScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container:{
-    flex:1,
-    backgroundColor:'#fff',
-    justifyContent:'center',
-    alignItems:'center'
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 })
