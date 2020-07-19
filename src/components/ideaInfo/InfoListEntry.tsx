@@ -5,22 +5,33 @@ function InfoListEntry(props: any) {
   const {item} = props
   return (
     <View style={styles.container}>
-      <Text style={styles.text} >{item.title} </Text>
+      <Text style={styles.textTitle} >{item.title} </Text>
+      <Text style={styles.textDescription} >{item.description} </Text>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
-    margin: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
+    margin: 5,
     height: 50,
     alignSelf: 'stretch',
-    backgroundColor: '#000'
+    backgroundColor: '#000',
+    flexDirection: 'row',
+    alignItems: 'center'
   },
-  text: {
+  textTitle: {
+    flex: 0.3,
+    justifyContent: 'flex-start',
+    marginLeft: 15,
     color: '#fff',
+  },
+  textDescription: {
+    flex: 0.7,
+    marginRight: 15,
+    textAlign: 'right',
+    color: '#fff',
+    backgroundColor: 'orange'
   }
 })
 

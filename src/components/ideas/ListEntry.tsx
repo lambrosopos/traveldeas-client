@@ -2,21 +2,25 @@ import React from 'react'
 import {View, Text, TouchableOpacity, StyleSheet} from 'react-native'
 import {useNavigation} from '@react-navigation/native'
 import {MaterialCommunityIcons} from '@expo/vector-icons';
+import {connect} from 'react-redux'
 
-export default function ListEntry(props: any) {
+import {IdeaActions as IA} from '../../actions'
+
+function ListEntry(props: any) {
   const {item} = props
   const navigation = useNavigation()
   return (
     <TouchableOpacity
       style={styles.container}
       onPress={() => {
+        props.dispatch(IA.setCurrentIdea(item))
         navigation.navigate('Idea')
       }}>
       <View style={styles.imageContainer}>
         <MaterialCommunityIcons name={item.icon} size={55} color="black" />
       </View>
       <View style={styles.titleContainer}>
-        <Text style={styles.text}>{item.title}</Text>
+        <Text style={styles.text}>{item.idea}</Text>
       </View>
     </TouchableOpacity>
   )
@@ -48,3 +52,5 @@ const styles = StyleSheet.create({
     marginTop: 5
   }
 })
+
+export default connect()(ListEntry)

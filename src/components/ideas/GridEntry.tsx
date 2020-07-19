@@ -2,21 +2,25 @@ import React from 'react'
 import {View, Text, TouchableOpacity, StyleSheet} from 'react-native'
 import {MaterialCommunityIcons} from '@expo/vector-icons';
 import {useNavigation} from '@react-navigation/native'
+import {connect} from 'react-redux'
 
-export default function GridEntry(props: any) {
+import {IdeaActions as IA} from '../../actions'
+
+function GridEntry(props: any) {
   const {item} = props
   const navigation = useNavigation();
   return (
     <TouchableOpacity
       style={styles.container}
       onPress={() => {
+        props.dispatch(IA.setCurrentIdea(item))
         navigation.navigate('Idea')
       }}>
       <View style={styles.imageContainer}>
         <MaterialCommunityIcons name={item.icon} size={100} color="black" />
       </View>
       <View style={styles.title}>
-        <Text>{item.title}</Text>
+        <Text>{item.idea}</Text>
       </View>
     </TouchableOpacity>
   )
@@ -45,6 +49,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignSelf: 'stretch',
     flex: 0.2,
-  }
+  },
 })
 
+export default connect()(GridEntry)

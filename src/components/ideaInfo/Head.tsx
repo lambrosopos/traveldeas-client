@@ -4,7 +4,7 @@ import {View, StyleSheet} from 'react-native'
 import Cover from './Cover'
 import Profile from './Profile'
 
-function Head() {
+export default function Head() {
   return (
     <View style={styles.container}>
       <Cover />
@@ -15,11 +15,10 @@ function Head() {
 
 const styles = StyleSheet.create({
   container: {
-    height: 150,
+    height: 140,
     alignSelf: 'stretch',
     backgroundColor: 'yellow',
     alignItems: 'center'
   },
 })
 
-export default Head

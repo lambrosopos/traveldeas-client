@@ -1,9 +1,9 @@
 import React from 'react'
-import {ScrollView, View, StyleSheet} from 'react-native'
-import {connect} from 'react-redux'
+import {View, StyleSheet} from 'react-native'
+//import {connect} from 'react-redux'
 import {IdeaInfo} from '../../components'
 
-function IdeaInfoScreen() {
+export default function IdeaInfoScreen() {
   return (
     <View style={styles.container}>
       <IdeaInfo.Head />
@@ -20,9 +20,3 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   }
 })
-
-const mapStateToProps = (state: any) => ({
-  currentIdea: state.IdeaReducer.currentIdea
-})
-
-export default connect(mapStateToProps)(IdeaInfoScreen)

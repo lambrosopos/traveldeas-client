@@ -1,15 +1,15 @@
 import React from 'react'
 import {FlatList, View, StyleSheet} from 'react-native'
+import {connect} from 'react-redux'
 
 import InfoListEntry from './InfoListEntry'
 
 function InfoList(props: any) {
-  const {data} = props
-  console.log(data)
+  const {currentIdea} = props
   return (
     <View style={styles.container}>
       <FlatList
-        data={data}
+        data={currentIdea.info}
         renderItem={({item}: any) => (
           <InfoListEntry key={item.key} item={item} />
         )}
@@ -26,5 +26,9 @@ const styles = StyleSheet.create({
   }
 })
 
-export default InfoList
+const mapStateToProps = (state: any) => ({
+  currentIdea: state.IdeaReducer.currentIdea
+})
+
+export default connect(mapStateToProps)(InfoList)
 
