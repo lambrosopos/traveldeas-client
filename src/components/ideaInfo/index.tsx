@@ -1,0 +1,6 @@
+export {default as Body} from './Body'
+export {default as Cover} from './Cover'
+export {default as Head} from './Head'
+export {default as InfoList} from './InfoList'
+export {default as InfoListEntry} from './InfoListEntry'
+export {default as Profile} from './Profile'
